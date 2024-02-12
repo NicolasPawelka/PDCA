@@ -1,18 +1,25 @@
+import subprocess
+import sys
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# Liste der erforderlichen Module
+required_packages = ["pandas", "pytz", "openpyxl", "pywin32"]
+
+# Installation der erforderlichen Module
+for package in required_packages:
+    install(package)
+
 import win32com.client as win32
 from win32com.client import constants as pjconstants
 import pandas as pd
-import pytz
-from datetime import datetime
 import tkinter as tk
 from tkinter import filedialog, simpledialog, messagebox
-import math
 from openpyxl import load_workbook
 import re
-import sys
 import json
 import os
 import inspect
-import subprocess
 ############################
 DEMO = False
 TASK_NAME = "PDCAPosName"
@@ -153,10 +160,7 @@ def add_Task(TASKS,name,depth,date,budget,vorgänger):
     task.Name = name
     #task.Start = date
     task.OutlineLevel = depth
-    task.Work = budget * 60
-    if vorgänger != -1:
-        task.Predecessors = vorgänger
-        pass
+    task.Cost = budget
     EXCEL.Application.Run("Sync",task.GUID,task.Name)
     return 1
 
@@ -402,5 +406,5 @@ if __name__ == "__main__":
                 mpp_file_path = sys.argv[1]
                 init(mpp_file_path)
     else:
-        mpp_file_path = r"C:\Users\npawelka\Desktop\Beispiel.mpp"
+        mpp_file_path = r"C:\Users\npawelka\Desktop\repo\PDCA\PDCA.mpp"
         init(mpp_file_path)
