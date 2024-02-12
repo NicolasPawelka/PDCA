@@ -1,3 +1,3 @@
 # PDCA
 
-Hier steht Text
+Schnittstelle für den PDCA Planner zu MS Project
