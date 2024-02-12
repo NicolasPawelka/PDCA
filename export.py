@@ -180,7 +180,7 @@ def add_resource():
     for _, row in DATA_FRAME.iloc[RESOURCE_index:].iterrows():
         if row.iloc[1] is not None:
             if row.iloc[1] not in [resource.Name for resource in ACTIVE_PROJECT.Resources]:
-                ACTIVE_PROJECT.Resources.Add(row.iloc[1])
+               resource = ACTIVE_PROJECT.Resources.Add(row.iloc[1])
         else:
             break
 
