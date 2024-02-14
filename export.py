@@ -1,15 +1,5 @@
 import subprocess
 import sys
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-# Liste der erforderlichen Module
-required_packages = ["pandas", "pytz", "openpyxl", "pywin32"]
-
-# Installation der erforderlichen Module
-for package in required_packages:
-    install(package)
-
 import win32com.client as win32
 from win32com.client import constants as pjconstants
 import pandas as pd
@@ -404,5 +394,5 @@ if __name__ == "__main__":
                 mpp_file_path = sys.argv[1]
                 init(mpp_file_path)
     else:
-        mpp_file_path = r"C:\Users\npawelka\Desktop\repo\PDCA\PDCA.mpp"
+        mpp_file_path = r"C:\Users\npawelka\Desktop\PDCA_WorkingCopy.mpp"
         init(mpp_file_path)

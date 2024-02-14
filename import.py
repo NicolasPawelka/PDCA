@@ -1,12 +1,3 @@
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-# Liste der erforderlichen Module
-required_packages = ["pandas", "pytz", "openpyxl", "pywin32"]
-
-# Installation der erforderlichen Module
-for package in required_packages:
-    install(package)
 import win32com.client as win32
 import tkinter as tk
 from tkinter import filedialog,messagebox
