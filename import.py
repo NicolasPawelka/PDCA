@@ -4,7 +4,7 @@ from tkinter import filedialog,messagebox
 import sys
 import subprocess
 ##########################
-DEMO = True
+DEMO = False
 EXCEL = None
 PROJECT = None
 EXCEL_FILE_PATH = None
