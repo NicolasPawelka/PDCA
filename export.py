@@ -159,7 +159,7 @@ def add_Summary(TASKS, name,depth,date,budget):
     task = TASKS.Add()
     task.Manual = False
     task.Name = name
-    task.Start = date
+   # task.Start = date
     task.OutlineLevel = depth
     EXCEL.Application.Run("Sync",task.GUID,task.Name)
     return 1
@@ -365,7 +365,7 @@ def main():
                 saved_depth = current_depth
             else:
                 date = WORKBOOK[DATABASE_NAME]['K'][index].value
-                if date == None or date.year < 2000:
+                if date == None:
                     date = START_DATE
                 if is_summary(current_depth,saved_depth,next_depth) :
                     add_Summary(TASKS,current_name,current_depth,date,extract_budget(current_budget))
@@ -384,6 +384,7 @@ def main():
 
 if __name__ == "__main__":
     if DEMO is False:
+        messagebox.showinfo("Info",len(sys.argv))
         if len(sys.argv) != 3:
             messagebox.showerror("Error", "Fehler bei der Ermittlung des Commands")
             sys.exit()
