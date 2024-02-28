@@ -384,7 +384,6 @@ def main():
 
 if __name__ == "__main__":
     if DEMO is False:
-        messagebox.showinfo("Info",len(sys.argv))
         if len(sys.argv) != 3:
             messagebox.showerror("Error", "Fehler bei der Ermittlung des Commands")
             sys.exit()
